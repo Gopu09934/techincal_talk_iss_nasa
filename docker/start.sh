@@ -17,6 +17,8 @@ echo "========================================"
 echo "Starting 24/7 YouTube Stream..."
 echo "========================================"
 
+#drawtext=fontfile=font.ttf:text='LIVE':fontcolor=red:fontsize=32:x=40:y=35,\
+#drawtext=fontfile=font.ttf:text='Credits\: NASA / SpaceX':fontcolor=white:fontsize=24:x=w-text_w-20:y=20" \
 # Split multiple URLs (comma-separated)
 IFS=',' read -ra URLS <<< "$VIDEO_URL"
 
@@ -37,9 +39,7 @@ while true; do
 -filter_complex "\
 [0:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2[video];\
 [1:v]scale=1280:720[overlay];\
-[video][overlay]overlay=0:0 "\
-#drawtext=fontfile=font.ttf:text='LIVE':fontcolor=red:fontsize=32:x=40:y=35,\
-#drawtext=fontfile=font.ttf:text='Credits\: NASA / SpaceX':fontcolor=white:fontsize=24:x=w-text_w-20:y=20" \
+[video][overlay]overlay=0:0" \
 -r 30 \
 -c:v libx264 \
 -preset ultrafast \
