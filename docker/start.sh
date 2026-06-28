@@ -37,7 +37,7 @@ while true; do
 -filter_complex "\
 [0:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2[video];\
 [1:v]scale=1280:720[overlay];\
-[overlay][video]overlay=0:0,\
+[video][overlay]overlay=0:0,\
 drawtext=fontfile=font.ttf:text='LIVE':fontcolor=red:fontsize=32:x=40:y=35,\
 drawtext=fontfile=font.ttf:text='Footage Courtesy: NASA & SpaceX':fontcolor=white:fontsize=22:x=40:y=685,\
 drawtext=fontfile=font.ttf:text='Your Channel Name':fontcolor=white:fontsize=24:x=1030:y=35" \
