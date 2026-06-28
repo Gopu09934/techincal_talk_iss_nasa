@@ -39,7 +39,7 @@ while true; do
 [1:v]scale=1080:720[overlay];\
 [video][overlay]overlay=0:0,\
 drawtext=fontfile=font.ttf:text='LIVE':fontcolor=red:fontsize=32:x=40:y=35,\
-drawtext=fontfile=font.ttf:text='Credits\: NASA / SpaceX':fontcolor=white:fontsize=24:x=w-text_w-20:y=20
+drawtext=fontfile=font.ttf:text='Credits\: NASA / SpaceX':fontcolor=white:fontsize=24:x=w-text_w-20:y=20" \
 -r 30 \
 -c:v libx264 \
 -preset ultrafast \
